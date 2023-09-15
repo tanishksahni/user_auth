@@ -1,16 +1,29 @@
-# user_auth
+# User_Auth Flutter Project
 
-"A new Flutter project."
+## Overview
 
-## Getting Started
+User_Auth is a Flutter project that showcases user authentication using Firebase Authentication and custom authentication using a Spring Boot backend. This project serves as a starting point for implementing user authentication in your Flutter application, combining both Firebase and custom authentication methods for a comprehensive user management system.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- Firebase Authentication:
+  - Email and password authentication
+  - Google Sign-In
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Custom Authentication with Spring Boot:
+  - Secure token-based authentication
+  - User registration and login
+  - User management (optional)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Prerequisites
+
+Before you start using this project, make sure you have the following prerequisites:
+
+1. **Flutter SDK:** Make sure you have Flutter installed. You can download it from [here](https://flutter.dev/docs/get-started/install).
+
+2. **Firebase Project:**
+   - Create a Firebase project on the [Firebase Console](https://console.firebase.google.com/).
+   - Set up Firebase Authentication methods (Email/Password, Google, Facebook, Twitter) according to your requirements.
+
+3. **Spring Boot Backend (Custom Authentication):**
+   - Set up a Spring Boot backend with custom authentication. You can refer to your own custom authentication implementation or use an existing one.
