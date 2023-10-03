@@ -10,7 +10,7 @@ User_Auth is a Flutter project that demonstrates user authentication using Fireb
 
 1. **Fork the Repository:** Click the "Fork" button in the top right corner of this repository to create your copy.
 
-2. **Clone Your Fork:** Clone the forked repository to your local machine using the following command:   git clone https://github.com/your-username/User_Auth.git
+2. **Clone Your Fork:** Clone the forked repository to your local machine using the following command:   git clone https://github.com/tanishksahni/User_Auth.git
 
 3. **Create a Branch:** Create a new branch for your contribution. Use a descriptive name that summarizes your change or fix:   git checkout -b my-feature
 
