@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "885193792439",
+    "project_id": "fir-auth-cc85e",
+    "storage_bucket": "fir-auth-cc85e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885193792439:android:c921b8dfa8c2288f986632",
+        "android_client_info": {
+          "package_name": "com.example.user_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm-ZXiJa2GIq47arBO56aUbTJkBgPBEkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
