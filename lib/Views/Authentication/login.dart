@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:user_auth/Views/Authentication/Components/myButton.dart';
 import 'package:user_auth/Views/Authentication/Components/myTextField.dart';
@@ -17,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
 
   // sign user in method
-  void signUserIn() {
+  void signUserIn() async {
     //show loading circle
     showDialog(
       context: context,
@@ -27,11 +28,22 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       },
     );
+    // //pop the loading circle
+    // Navigator.pop(context);
 
     //try sign in
-    //Todo:
-    //pop the loading circle
-    Navigator.pop(context);
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      // Pop the loading circle
+      Navigator.pop(context);
+
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Authentication failed: ${e.message}')));
+    }
   }
 
   @override

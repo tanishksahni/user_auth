@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:user_auth/Views/Authentication/Components/myButton.dart';
 import 'package:user_auth/Views/Authentication/Components/myTextField.dart';
@@ -18,7 +19,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _confirmPasswordController = TextEditingController();
 
   // sign user up method
-  void signUserUp() {
+  void signUserUp() async {
     //show loading circle
     showDialog(
       context: context,
@@ -28,23 +29,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
         );
       },
     );
-
     //try creating the user
-    //Todo:
-
     try {
       //check if password is confirmed
-      if (_passwordController == _confirmPasswordController) {
-        //Todo:
+      if (_passwordController.text == _confirmPasswordController.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
       } else {
         //show error message
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Password does not  match")));
       }
       //pop the loading circle
       Navigator.pop(context);
-    } catch (e) {
-      //pop the loading circle
+    } on FirebaseAuthException catch (e) {
+      // Pop the loading circle
       Navigator.pop(context);
-      //show error message
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Sign up failed: ${e.message}')));
     }
   }
 
