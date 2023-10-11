@@ -5,7 +5,7 @@ class Home extends StatelessWidget {
 
   // final user;
 
-  // sign user out method 
+  // sign user out method
   void signUserOut() {}
 
   @override
