@@ -53,6 +53,7 @@ class _PasswordResetState extends State<PasswordReset> {
                 ),
                 Text(
                   'Please enter your Registered Email\nso we can send a reset link',
+                  style: TextStyle(fontWeight: FontWeight.w300,fontSize: 14),
                   // style: GoogleFonts.raleway(
                   //   fontSize: 16,
                   //   //color: kTextColor,
@@ -64,7 +65,7 @@ class _PasswordResetState extends State<PasswordReset> {
                 TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
-                    hintText: 'Email',
+                    hintText: 'example@gmail.com',
                     fillColor: Colors.transparent,
                     filled: true,
                     prefixIcon: const Icon(
