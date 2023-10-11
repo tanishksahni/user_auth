@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_auth/Views/Authentication/Components/ForgotPass.dart';
 import 'package:user_auth/Views/Authentication/Components/myButton.dart';
 import 'package:user_auth/Views/Authentication/Components/myTextField.dart';
 import 'package:user_auth/Views/Authentication/Components/squareTile.dart';
@@ -22,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
+        return const Center(
           child: CircularProgressIndicator(),
         );
       },
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const SizedBox(height: 50),
                 // logo
-                Icon(
+                const Icon(
                   Icons.logo_dev,
                   size: 100,
                 ),
@@ -81,23 +82,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                // // Forgot Password
-                // Padding(
-                //   padding: EdgeInsets.symmetric(horizontal: 25),
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.end,
-                //     children: [
-                //       TextButton(
-                //         style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                //         child: Text(
-                //           'Forgot Password?',
-                //           style: TextStyle(color: Colors.grey.shade700),
-                //         ),
-                //         onPressed: () {},
-                //       ),
-                //     ],
-                //   ),
-                // ),
+                // Forgot Password
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.grey.shade700),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const PasswordReset()));
+                        },
+                      ),
+                    ],
+                  ),
+                ),
 
                 //signin button
                 MyButton(
@@ -108,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 50),
 
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: Row(children: [
                     Expanded(
                         child: Divider(
@@ -116,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Colors.grey[400],
                     )),
                     Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
                           'Or continue with',
                           style: TextStyle(color: Colors.grey[700]),
@@ -128,11 +132,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     ))
                   ]),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 //google and apple button
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     //google button
@@ -146,16 +150,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     SquareTile(imagePath: 'assets/images/Apple.png'),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Don't have an account?"),
+                    const Text("Don't have an account?"),
                     GestureDetector(
                       onTap: widget.onTap,
-                      child: Text(
+                      child: const Text(
                         " Sign Up",
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.bold),
