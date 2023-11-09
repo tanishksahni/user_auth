@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:user_auth/Managers/user_auth.dart';
 
 class AuthState extends ChangeNotifier {
